@@ -1,6 +1,3 @@
-from gi.repository import GdkPixbuf
-
-
 class GtkResources:
     @classmethod
     def load_image(cls, _):
