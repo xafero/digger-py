@@ -24,8 +24,9 @@ class Scores:
 
     def _submit(self, n, s):
         if self.dig.subaddr is not None:
-            ms = 16 + int((SystemX.current_millis() % (65536 - 16)))
-            self.substr = n + '+' + s + '+' + str(ms) + '+' + ((ms + 32768) * s) % 65536
+            pass
+            # ms = 16 + int((SystemX.current_millis() % (65536 - 16)))
+            # self.substr = n + '+' + s + '+' + str(ms) + '+' + ((ms + 32768) * s) % 65536
             # (Thread(self)).start()
         return self.scores
 
