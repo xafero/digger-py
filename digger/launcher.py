@@ -20,8 +20,8 @@ if __name__ == '__main__':
     frame.set_size_request(game.width * 4.03, game.height * 4.15)
     frame.set_position(Gtk.WindowPosition.CENTER)
 
-    # icon = Resources.FindResource("/icons/digger.png")
-    # frame.Icon = GtkResources.LoadImage(icon)
+    icon = "./res/icons/digger.png"
+    frame.set_icon_from_file(icon)
 
     pgtk._digger = game
     frame.add(pgtk)
