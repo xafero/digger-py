@@ -155,7 +155,7 @@ class Scores:
                     i -= 1
                 k = self.dig.Input.getasciikey(k)
             if k != 0:
-                self.dig.Pc.gwrite(i * 24 + 128, 130, k, 3, True)
+                self.dig.Pc.gwrite2(i * 24 + 128, 130, k, 3, True)
                 sb = self.scoreinit[0] + ""
                 sbnew = sb[:i] + chr(k) + sb[i + 1:]
                 self.scoreinit[0] = sbnew

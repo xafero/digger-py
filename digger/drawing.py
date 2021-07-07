@@ -163,13 +163,13 @@ class Drawing:
 
     def drawlives(self):
         n = self.dig.Main.getlives(1) - 1
-        for ll in range(1, 4):
-            self.drawlife(n > 0 if 0 else 2, ll * 20 + 60, 0)
+        for ll in range(1, 5):
+            self.drawlife(0 if n > 0 else 2, ll * 20 + 60, 0)
             n -= 1
         if self.dig.Main.nplayers == 2:
             n = self.dig.Main.getlives(2) - 1
-            for ll in range(1, 4):
-                self.drawlife(n > 1 if 0 else 2, 244 - ll * 20, 0)
+            for ll in range(1, 5):
+                self.drawlife(1 if n > 0 else 2, 244 - ll * 20, 0)
                 n -= 1
 
     def drawmon(self, n, nobf, dirp, x, y):
