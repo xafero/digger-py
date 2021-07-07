@@ -211,7 +211,8 @@ class Pc:
             dest += self.width
 
         if upd:
-            self.currentSource.new_pixels(x, y, 12, 12)
+            # Force complete update for high score
+            self.currentSource.new_pixels_all()  # (x, y, 12, 12)
 
     def get_width(self):
         return self.width
