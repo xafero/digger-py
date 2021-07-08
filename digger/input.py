@@ -46,7 +46,8 @@
 
     @staticmethod
     def getasciikey(make):
-        if (make == ord(' ')) or ((make >= ord('a')) and (make <= ord('z'))) or ((make >= ord('0')) and (make <= ord('9'))):
+        if (make == ord(' ')) or ((make >= ord('a')) and (make <= ord('z'))) or \
+                ((make >= ord('0')) and (make <= ord('9'))):
             return make
         else:
             return 0
