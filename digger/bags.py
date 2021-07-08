@@ -48,7 +48,7 @@ class Bags:
 
     def cleanupbags(self):
         self.dig.Sound.soundfalloff()
-        for bpa in range(1, 7):
+        for bpa in range(1, 8):
             if self.bagdat[bpa].exist and (
                     (self.bagdat[bpa].h == 7 and self.bagdat[bpa].v == 9) or self.bagdat[bpa].xr != 0 or
                     self.bagdat[bpa].yr != 0 or self.bagdat[bpa].gt != 0 or self.bagdat[bpa].fallh != 0 or
@@ -63,7 +63,7 @@ class Bags:
     def dobags(self):
         soundfalloffflag = True
         soundwobbleoffflag = True
-        for bag in range(1, 7):
+        for bag in range(1, 8):
             if self.bagdat[bag].exist:
                 if self.bagdat[bag].gt != 0:
                     if self.bagdat[bag].gt == 1:
@@ -85,7 +85,7 @@ class Bags:
                                 self.bagdat[bag].gt = self.goldtime - 10
                 else:
                     self.updatebag(bag)
-        for bag in range(1, 7):
+        for bag in range(1, 8):
             if self.bagdat[bag].dir == 6 and self.bagdat[bag].exist:
                 soundfalloffflag = False
             if self.bagdat[bag].dir != 6 and self.bagdat[bag].wobbling and self.bagdat[bag].exist:
@@ -96,7 +96,7 @@ class Bags:
             self.dig.Sound.soundwobbleoff()
 
     def drawbags(self):
-        for bag in range(1, 7):
+        for bag in range(1, 8):
             if self.dig.Main.getcplayer() == 0:
                 self.bagdat[bag].copy_from(self.bagdat1[bag])
             else:
@@ -122,7 +122,7 @@ class Bags:
 
     def getnmovingbags(self):
         n = 0
-        for bag in range(1, 7):
+        for bag in range(1, 8):
             if self.bagdat[bag].exist and self.bagdat[bag].gt < 10 and (
                     self.bagdat[bag].gt != 0 or self.bagdat[bag].wobbling):
                 n += 1
@@ -131,7 +131,7 @@ class Bags:
     def initbags(self):
         self.pushcount = 0
         self.goldtime = 150 - self.dig.Main.levof10() * 10
-        for bag in range(1, 7):
+        for bag in range(1, 8):
             self.bagdat[bag].exist = False
         bag = 1
         for x in range(15):
@@ -153,10 +153,10 @@ class Bags:
                         self.bagdat[bag].yr = 0
                         bag += 1
         if self.dig.Main.getcplayer() == 0:
-            for i in range(1, 7):
+            for i in range(1, 8):
                 self.bagdat1[i].copy_from(self.bagdat[i])
         else:
-            for i in range(1, 7):
+            for i in range(1, 8):
                 self.bagdat2[i].copy_from(self.bagdat[i])
 
     def pushbag(self, bag, dirp):
