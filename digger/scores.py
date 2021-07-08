@@ -23,7 +23,7 @@ class Scores:
         self.bonusscore = 20000
         self.gotinitflag = False
 
-    def _submit(self, n, s):
+    def _submit(self, _, __):
         if self.dig.subaddr is not None:
             pass
             # ms = 16 + int((SystemX.current_millis() % (65536 - 16)))
@@ -40,8 +40,8 @@ class Scores:
             inx = ['' for _ in range(10)]
             sc = [0 for _ in range(10)]
             for i in range(10):
-                inx[i] = str(o[i][0])
-                sc[i] = int((int(o[i][1])))
+                inx[i] = o[i].key
+                sc[i] = o[i].value
             for i in range(10):
                 self.scoreinit[i + 1] = inx[i]
                 self.scorehigh[i + 2] = sc[i]
@@ -103,6 +103,7 @@ class Scores:
             self.getinitials()
             self.updatescores(self._submit(self.scoreinit[0], int(self.scoret)))
             self.shufflehigh()
+            ScoreStorage.write_to_storage(self)
         else:
             self.dig.Main.cleartopline()
             self.dig.Drawing.outtext("GAME OVER", 104, 0, 3, True)
