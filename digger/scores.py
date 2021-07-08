@@ -203,8 +203,9 @@ class Scores:
             x += 1
         return p
 
-    def run(self):
-        pass
+    def init(self):
+        if not ScoreStorage.read_from_storage(self):
+            ScoreStorage.create_in_storage(self)
 
     def scorebonus(self):
         self.addscore(1000)

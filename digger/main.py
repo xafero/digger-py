@@ -133,7 +133,7 @@ class Main:
         self.dig.Scores.loadscores()
         self.dig.Sound.initsound()
 
-        self.dig.Scores.run()
+        self.dig.Scores.init()
         self.dig.Scores.updatescores(self.dig.Scores.scores)
 
         self.nplayers = 1
