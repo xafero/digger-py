@@ -44,5 +44,6 @@ class AppletCompat:
         }
         got = switcher.get(net_code, -1)
         if got == -1:
-            got = ord(net_code)
+            asc = ord(net_code) if len(net_code) == 1 else -2
+            got = asc
         return got
